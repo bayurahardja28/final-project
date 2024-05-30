@@ -8,6 +8,9 @@ html {
     @apply font-semibold;
 }
 
+thead {
+    @apply border-b-4 border-base-300 bg-base-200/50;
+}
 .textarea-bordered,
 .file-input-bordered,
 .select-bordered,
@@ -22,4 +25,14 @@ html {
 }
 .card {
     @apply bg-base-100 border-2 border-base-300;
+}
+.page-wrapper {
+    @apply container w-full max-w-xl p-6 mx-auto space-y-6;
+    max-width: 80rem;
+}
+.table-wrapper {
+    @apply bg-base-100 border-2 border-base-300 overflow-x-auto rounded-lg whitespace-nowrap;
+}
+.modal-box {
+    @apply scrollbar-hide;
 }
