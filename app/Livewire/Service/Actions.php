@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Service;
+namespace App\Livewire\Customer;
 
 use App\Livewire\Forms\SeriviceForm;
 use App\Models\Service;
@@ -68,6 +68,7 @@ class Actions extends Component
 
     public function render()
     {
-        return view('livewire.service.actions');
+        return view('livewire.customer.actions');
     }
 }
+

@@ -18,8 +18,10 @@ Route::get('/', function () {
 });
 Route::middleware('auth')->group(function() {
     Route::get('home', \App\Livewire\Home::class)->name('home');
-    Route::get('service', \App\Livewire\Service\Index::class)->name('service.index');
-    Route::get('profile', \App\Livewire\Auth\Profile::class)->name('profile');
+
+    Route::get('/profile', \App\Livewire\Auth\Profile::class)->name('profile');
+    Route::get('/service', \App\Livewire\Service\Index::class)->name('service.index');
+    Route::get('/customer', \App\Livewire\Customer\Index::class)->name('customer.index');
 });
 Route::middleware('guest')->group(function() {  
     Route::get('/login',\App\Livewire\Auth\Login::class)->name('login');

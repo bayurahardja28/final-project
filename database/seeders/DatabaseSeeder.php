@@ -3,13 +3,22 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\Customer;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    public function run()
+    /**
+     * Seed the application's database.
+     */
+    public function run(): void
     {
-        Customer::factory()->withUser()->count(10)->create();
+        // \App\Models\User::factory(10)->create();
+
+        \App\Models\User::factory()->create([
+            'name' => 'owner',
+            'email' => 'owner@if22g.com',
+            'password' => 'Admin123',
+            'role' => 'owner'
+        ]);
     }
 }
