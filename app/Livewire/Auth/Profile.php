@@ -24,9 +24,9 @@ class Profile extends Component
             unset($valid['password']);
         } 
         $this->user->update($valid);
+        $this->dispatch('reload');
 
-        $this->reset();
-        $this->mount();
+       
 
     }
     public function mount() {

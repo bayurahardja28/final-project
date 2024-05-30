@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Livewire\Customer;
+namespace App\Livewire\Service;
 
 use App\Livewire\Forms\SeriviceForm;
 use App\Models\Service;
 use Livewire\Component;
-use Livewire\Attributes\On;
+use Livewire\Attributes\on;
 
 use Livewire\WithFileUploads;
 
@@ -63,12 +63,13 @@ class Actions extends Component
     public function closeModal()
     {
         $this->show = false;
+        $this->photo = null;
         $this->form->reset();
     }
 
     public function render()
     {
-        return view('livewire.customer.actions');
+        return view('livewire.service.actions');
     }
 }
 

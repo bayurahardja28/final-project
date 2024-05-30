@@ -15,7 +15,6 @@ class Actions extends Component
 {
     use WithFileUploads;
 
-    public $photo;
 
     public $show = false;
     
@@ -42,14 +41,22 @@ class Actions extends Component
         $this->dispatch('reload');
 
     }
-    #[On('deletService')]
+    #[On('deletCustomer')]
 
-    public function deletService(Customer $customer)
-    {   
-        $customer->delete();
-        $this->dispatch('reload');
+    public function deleteCustomer(Customer $customer)
+{   
+    
+    // Retrieve the associated user
+    $user = User::find($customer->user_id);
 
-    }
+    // Delete the customer
+    $customer->delete();
+
+    // Delete the associated user
+    $user->delete();
+
+    $this->dispatch('reload');
+}
     public function simpan()
 {
     // Validate the form data
@@ -64,9 +71,6 @@ class Actions extends Component
     } else {
         $this->form->update();
     }
-    // Update the customer
- 
- 
 
     $this->closeModal();
     $this->dispatch('reload');

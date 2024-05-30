@@ -12,6 +12,6 @@ export default {
     plugins: [require("daisyui"), require("tailwind-scrollbar-hide")],
     daisyui: {
         styled: true,
-        themes: ["bumblebee"],
+        themes: ["winter"],
     },
 };

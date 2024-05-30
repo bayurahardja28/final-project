@@ -29,7 +29,7 @@
                             <button class="btn btn-xs btn-square" wire:click="$dispatch('editCustomer', {customer : {{ $customer->id }}})">
                                 <x-tabler-edit class="size-4" />
                             </button>
-                            <button class="btn btn-xs btn-square" wire:click="$dispatch('deletcustomer', {customer : {{ $customer->id }}})">
+                            <button class="btn btn-xs btn-square" wire:click="$dispatch('deletCustomer', {customer : {{ $customer->id }}})">
                                 <x-tabler-trash class="size-4" />
                             </button>
                         </div>
