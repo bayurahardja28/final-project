@@ -59,13 +59,7 @@ class Actions extends Component
 }
     public function simpan()
 {
-    // Validate the form data
-    $this->validate([
-        'form.name' => 'required',
-        'form.contact' => 'required',
-        'form.user_email' => 'required|email'
-       
-    ]);
+   
     if ($this->form->user_id === null) {
         $this->form->store();
     } else {
