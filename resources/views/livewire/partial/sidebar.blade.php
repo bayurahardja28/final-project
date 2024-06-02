@@ -10,7 +10,7 @@
                 </a>
             </li>
             <li>
-                <a href="" @class(['active' => false]) wire:navigate>
+                <a href="{{ route('transaksi.actions')}}" @class(['active' => false]) wire:navigate>
                     <x-tabler-file-plus class="size-5" />
                     <span>Input Transaksi</span>
                 </a>

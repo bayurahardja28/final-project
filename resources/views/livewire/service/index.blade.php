@@ -13,14 +13,15 @@
                     <th>No</th>
                     <th>Name</th>
                     <th>Price</th>
-                    <th>Estimated Time</th>
+                    <th >Estimated Time</th>
+                    <th >Unit</th>
                     <th>Description</th>
                     <th class="text-center">Action</th>
                 </tr>
             <tbody>
                 @foreach ($services as $service)
                 <tr>
-                    <td>{{ $no++ }}</td>
+                    <td class="text-center">{{ $no++ }}</td>
                     <td>
                         <div class="flex gap-3 items-center">
                             <div class="avatar">
@@ -33,8 +34,11 @@
                             </div>
                         </div>
                     </td>
+                    
                     <td>{{ $service->harga}}</td>
-                    <td  class="text-center">{{ $service->estimated_completion_time}}</td>
+                    
+                    <td>{{ $service->estimated_completion_time}}</td>
+                    <td>{{ $service->unit}}</td>
                     <td class="whitespace-normal w-80">
                         <div class="line-clamp-2">
                             {{ $service->description}}

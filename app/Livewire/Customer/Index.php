@@ -10,8 +10,6 @@ class Index extends Component
 {
     public $search;
 
-    protected $listeners = ['reload' => '$refresh'];
-
     public $no = 1;
 
     public function render()

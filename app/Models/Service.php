@@ -10,7 +10,10 @@ use Illuminate\Support\Number;
 class Service extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'photo', 'description', 'price', 'estimated_completion_time'];
+    protected $fillable = ['id','name', 'photo', 'description', 'price', 'estimated_completion_time','unit'];
+
+
+    public static $unit = ['kg','pcs'];
 
     
 

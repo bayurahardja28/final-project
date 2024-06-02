@@ -44,16 +44,17 @@ class Actions extends Component
         $service->delete();
         $this->dispatch('reload');
 
+
     }
     public function simpan()
     {
         if($this->photo){
-            $this->form->photo = $this->photo->hashName('service');
-            $this->photo->store('service', 'public');
+            $this->form->photo = $this->photo->store('service','public');
         }
         if(isset($this->form->service)){
-            $this->form->update(); 
-        }else{  
+            $this->form->update();
+        }
+        else{
             $this->form->store();
         }
         $this->closeModal();
@@ -69,7 +70,9 @@ class Actions extends Component
 
     public function render()
     {
-        return view('livewire.service.actions');
+        return view('livewire.service.actions',[
+            'units' => Service::$unit,
+        ]);
     }
 }
 

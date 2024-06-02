@@ -27,12 +27,14 @@ thead {
     @apply bg-base-100 border-2 border-base-300;
 }
 .page-wrapper {
-    @apply container w-full max-w-xl p-6 mx-auto space-y-6;
-    max-width: 80rem;
+    @apply container w-full max-w-6xl p-6 mx-auto space-y-6;
 }
 .table-wrapper {
     @apply bg-base-100 border-2 border-base-300 overflow-x-auto rounded-lg whitespace-nowrap;
 }
 .modal-box {
     @apply scrollbar-hide;
+}
+.card-divider {
+    @apply border-b-2 border-base-300;
 }

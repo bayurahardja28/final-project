@@ -11,19 +11,24 @@ class SeriviceForm extends Form
     public $name;
     public $description;
     public $price;
+    public $unit;
     public $estimated_completion_time;
     public $photo;
+    public $id;
+
     
     public ?Service $service;
 
     public function setService(Service $service)
     {
         $this->service = $service;
-        
+
+        $this->id = $service->id;
         $this->name = $service->name;
         $this->description = $service->description;
         $this->price = $service->price;
         $this->estimated_completion_time = $service->estimated_completion_time;
+        $this->unit = $service->unit;
         $this->photo = $service->photo;
     }
     public function store(){
@@ -31,9 +36,11 @@ class SeriviceForm extends Form
             'name' => 'required',
             'description' => 'required',
             'price' => 'required',
+            'unit' => 'required',
             'estimated_completion_time' => 'required',
             
         ]);
+        dd($validate);  
         if($this->photo){
             $validate['photo'] = $this->photo;
         }
@@ -46,6 +53,7 @@ class SeriviceForm extends Form
             'name' => 'required',
             'description' => 'required',
             'price' => 'required',
+            'unit' => 'required',
             'estimated_completion_time' => 'required',
         ]);
         if($this->photo){
