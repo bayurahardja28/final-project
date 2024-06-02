@@ -40,7 +40,7 @@ class SeriviceForm extends Form
             'estimated_completion_time' => 'required',
             
         ]);
-        dd($validate);  
+        // dd($validate);  
         if($this->photo){
             $validate['photo'] = $this->photo;
         }
