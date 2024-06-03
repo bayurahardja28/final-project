@@ -9,13 +9,17 @@ class Transaksi extends Model
 {
     use HasFactory;
 
+
+    
     protected $fillable = [
         'customer_id',
         'description',
         'items',
         'price',
         'status',
+        'created_at',
     ];
+    public static $status = ['dibayar','dalam antrian', 'dicuci', 'disetrika', 'siap diambil', 'sudah diambil'];
 
     protected function casts() {
         return [
