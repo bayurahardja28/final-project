@@ -32,22 +32,32 @@
                     <table class="table">
                         <thead>
                             <th>Nama Menu</th>
-                            <th>Qty</th>
-                            <th>Harga</th>
                             <th></th>
+                            <th>Qty</th>
+                            <th></th>
+                            <th>Harga</th>
+
                         </thead>
                         <tbody>
                             @foreach ($items as $key => $value)
                                 <tr>
                                     <td>{{ $key }}</td>
-                                    <td>{{ $value['qty'] }}</td>
-                                    <td>{{ Number::format($value['price']) }}</td>
+
                                     <td>
                                         <button class="btn btn-xc btn-square"
                                             wire:click="removeItem('{{ $key }}')">
                                             <x-tabler-minus class="size-4" />
                                         </button>
                                     </td>
+                                    <td>{{ $value['qty'] }}</td>
+
+                                    <td>
+                                        <button class="btn btn-xc btn-square"
+                                            wire:click="plusItem('{{ $key }}')">
+                                            <x-tabler-plus class="size-4" />
+                                        </button>
+                                    </td>
+                                    <td>{{ Number::format($value['price']) }}</td>
                                 </tr>
                             @endforeach
                         </tbody>

@@ -28,7 +28,10 @@
                         @foreach (json_decode($transaksi?->items, true) ?? [] as $key => $item)
                             <tr>
                                 <td>{{ $key }}</td>
-                                <td>{{ $item['qty'] }}</td>
+                                <td>{{ $item['qty'] }} @if (isset($item['unit']))
+                                        {{ $item['unit'] }}
+                                    @endif
+                                </td>
                                 <td>{{ Number::format($item['price']) }}</td>
                             </tr>
                         @endforeach

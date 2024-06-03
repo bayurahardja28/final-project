@@ -13,24 +13,25 @@ class Actions extends Component
     public $items = [];
     public TransaksiForm $form;
 
-    public function addItem(Service $service)
-    {
-        if (isset($this->items[$service->name])){
-            $item = $this->items[$service->name];
-            $this->items[$service->name] = [
-                'qty' => $item['qty'] + 1,
-                'price' => $item['price'] + $service->price
-            ];
-        }
-        else{
-            $this->items[$service->name] = [
-                'qty' => 1,
-                'price' => $service->price
-            ];
-
-        }
-
+    
+public function addItem(Service $service)
+{
+    if (isset($this->items[$service->name])){
+        $item = $this->items[$service->name];
+        $this->items[$service->name] = [
+            'qty' => $item['qty'] + 1,
+            'price' => $item['price'] + $service->price,
+            'unit' => $service->unit
+        ];
     }
+    else{
+        $this->items[$service->name] = [
+            'qty' => 1,
+            'price' => $service->price,
+            'unit' => $service->unit
+        ];
+    }
+}
     public function getPrice()
     {
         $prices = array_column($this->items, 'price');
@@ -51,6 +52,15 @@ class Actions extends Component
            unset($this->items[$key]);
        }
     }
+    public function plusItem($key)
+{
+    $item = $this->items[$key];
+    $harga = $item['price'] / $item['qty'];
+    $qtybaru = $item['qty'] + 0.1;
+
+    $this->items[$key]['qty'] = $qtybaru;
+    $this->items[$key]['price'] = $harga * $qtybaru;
+}
     public function simpan()
     {
         $this->validate([
