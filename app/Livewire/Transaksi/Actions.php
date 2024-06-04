@@ -71,7 +71,7 @@ public function addItem(Service $service)
    
         $this->form->store();
 
-        $this->redirect(route('transaksi.index'));
+        $this->redirect(route('home'));
 
     }
 

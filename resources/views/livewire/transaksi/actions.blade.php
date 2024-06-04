@@ -26,7 +26,7 @@
                 <h3 class="card-title">Detail Transaksi</h3>
 
                 <div @class([
-                    'class="table-wrapper"',
+                    'table-wrapper',
                     'border-error' => $errors->first('items'),
                 ])>
                     <table class="table">
@@ -69,8 +69,10 @@
                         <option value="{{ $id }}">{{ $name }}</option>
                     @endforeach
                 </select>
-                <textarea rows="3" class="textarea textarea-bordered" placeholder="Keterangan Transaksi"
-                    wire:model="form.description"></textarea>
+                <textarea rows="3"placeholder="Keterangan Transaksi" @class([
+                    'textarea textarea-bordered',
+                    'text-error' => $errors->first('form.description'),
+                ]) wire:model="form.description"></textarea>
                 <div class="card-actions justify-between">
                     <div class="flex flex-col">
                         <div class="text-xs">Total harga</div>

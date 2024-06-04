@@ -12,7 +12,7 @@ class Index extends Component
 
     public $date;
    
-    
+    protected $listeners = ['reload' => '$refresh'];
 
     public function mount()
     {
