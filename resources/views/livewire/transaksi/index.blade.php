@@ -52,4 +52,5 @@
     </div>
     @livewire('transaksi.update')
     @livewire('transaksi.detail')
+
 </div>
